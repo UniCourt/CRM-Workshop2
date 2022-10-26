@@ -125,5 +125,5 @@ Query:
         amount __________,
         transaction_date ___________,
         status VARCHAR(10),
-        FOREIGN KEY (_____________) REFERENCES __________(______________)
+        CONSTRAINT fk_account FOREIGN KEY (_____________) REFERENCES __________(______________)
     );

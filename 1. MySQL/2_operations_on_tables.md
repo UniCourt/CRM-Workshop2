@@ -19,7 +19,7 @@ Syntax:
 Example,
 
     ALTER TABLE account
-    ADD phone_number INT(10);
+    ADD phone_number INT(15);
 
 ## Insert records
 
@@ -28,10 +28,10 @@ Let's insert some data to the tables now.
 Syntax:
 
     INSERT INTO account (account_number, name, address, account_status, phone_number)
-    VALUES ('SB101', 'Anna', 'M.G Road, Bangalore', 'Active', '9113456578');
+    VALUES ('SB001', 'Anna', 'M.G Road, Bangalore', 'Active', '9113456578');
 
     INSERT INTO transaction (account_number, transaction_type, amount, transaction_date, status)
-    VALUES ('SB101', 'Credit', '2000', '2022-10-27 03:00:00', 'Success');
+    VALUES ('SB001', 'Credit', '2000', '2022-10-27 03:00:00', 'Success');
 
 ## View the records in the table
 
@@ -59,7 +59,7 @@ Example,
 
     UPDATE account
     SET phone_number = '8879956746'
-    WHERE account_number='SB101';
+    WHERE account_number='SB001';
 
 View the updated rows,
 
@@ -89,7 +89,7 @@ Syntax:
 
 Example:
 
-    DELETE FROM account WHERE status='Closed';
+    DELETE FROM account WHERE account_status='Closed';
 
 We get an reference error, why?
 
@@ -100,26 +100,26 @@ Let's drop our foreign key constraint on the transaction table.
 Syntax:
 
     ALTER TABLE table_name
-    DROP contraint_name;
+    DROP contraint_type constraint_name;
 
 Example:
 
     ALTER TABLE transaction
-    DROP FOREIGN KEY;
+    DROP FOREIGN KEY fk_account;
 
 Now, recreate the constraint with ON DELETE CASCADE
 
 Syntax:
 
     ALTER TABLE transaction
-    ADD CONSTRAINT foriegn_key FOREIGN KEY (account_number) REFERENCES account(account_number)
+    ADD CONSTRAINT fk_account FOREIGN KEY (account_number) REFERENCES account(account_number)
     ON DELETE CASCADE;
 
 Now let's try deleting all closed accounts from account table.
 
-    DELETE FROM account WHERE status='Closed';
+    DELETE FROM account WHERE account_status='Closed';
 
 View the updated records of account and transaction table, the transaction history of deleted account must also be deleted from the table.
 
     SELECT * FROM account;
-    SELECT * FROM account;
+    SELECT * FROM transaction;

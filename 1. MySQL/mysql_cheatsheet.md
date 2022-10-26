@@ -73,19 +73,12 @@ Syntax:
     ALTER TABLE table_name
     DROP COLUMN column_name;
 
-## Alter table - Modify column
+## Alter table - Modify column / Change data type
 
 Syntax:
 
     ALTER TABLE table_name
     MODIFY COLUMN column_name datatype;
-
-## Alter table - Change data type
-
-Syntax:
-
-    ALTER TABLE Persons
-    MODIFY COLUMN DateOfBirth year;
 
 ## Alter table - Add new constraint
 
