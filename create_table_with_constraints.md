@@ -1,4 +1,4 @@
-# Creating tables with constraints
+# Session 1 - Creating tables with constraints
 ## Create database
 Let's create a new database for this workshop handson called 'Bank'
 

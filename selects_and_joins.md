@@ -1,4 +1,4 @@
-# Select queries and MySQL joins
+# Session 3 - Select queries and MySQL joins
 
 ## Simple SELECTs
 

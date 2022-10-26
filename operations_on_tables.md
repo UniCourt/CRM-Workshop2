@@ -1,4 +1,4 @@
-# Operations on tables
+# Session 2 - Operations on tables
 
 Let's start by viewing the tables we created.
 
