@@ -57,10 +57,10 @@ Execute step 1 and step 2 again
     INSERT INTO transaction (account_number, transaction_type, amount, transaction_date, status)
     VALUES ('SB101', 'Debit', '500', '2022-10-27 03:00:00', 'Success');
 
-Now when we are in the middle of the transaction, Bob wants to add more money to his account say Rs.1000 (Terminal 2)
+Now when we are in the middle of the transaction, Anna wants to add more money to her account say Rs.1000 (Terminal 2)
 
     UPDATE account SET balance = balance + 1000
-    WHERE account_number='SB102';
+    WHERE account_number='SB101';
 
 Check Bob's account balance in both the terminals
 
@@ -140,10 +140,10 @@ Begin the mySQL transaction again because a rollback will end the current transa
     INSERT INTO transaction (account_number, transaction_type, amount, transaction_date, status)
     VALUES ('SB101', 'Debit', '500', '2022-10-27 03:00:00', 'Success');
 
-Let's say we reached step 2 and Bob tries to add money to his account. Let's try adding Rs.1000 to Bob's account in the other window (Terminal 2)
+Let's say we reached step 2 and Anna tries to add money to her account. Let's try adding Rs.1000 to Anna's account in the other window (Terminal 2)
 
     UPDATE account SET balance = balance + 1000
-    WHERE account_number='SB102';
+    WHERE account_number='SB101';
 
 Let's continue our pending transaction
 
