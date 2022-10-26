@@ -46,7 +46,7 @@ Let's alter your PHP Application to print your name with a variable.
 ```php
 <?php
 $userName = 'Rajmohan Kamath';
-echo 'Welcome back $userName !';
+echo "Welcome back {$userName} !";
 ?>
 ```
 Hit Save and head to [https://localhost:8081](https://localhost:8081)

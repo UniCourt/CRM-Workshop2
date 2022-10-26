@@ -435,7 +435,6 @@ class Pet {
     public function updateInDB($connection)
     {
         $sql = "UPDATE `pet` set name = ?, species = ?, description = ?, price = ? where id = ?";
-        $this->printValues();
         $stmt = $connection->prepare($sql);
         $stmt->bind_param("sssdi", $this->getName(), $this->getSpecies(), $this->getDescription(), $this->getPrice(), $this->getId());
         $result = $stmt->execute();
