@@ -118,3 +118,8 @@ Syntax:
 Now let's try deleting all closed accounts from account table.
 
     DELETE FROM account WHERE status='Closed';
+
+View the updated records of account and transaction table, the transaction history of deleted account must also be deleted from the table.
+
+    SELECT * FROM account;
+    SELECT * FROM account;

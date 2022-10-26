@@ -54,6 +54,22 @@ Example:
     DESC transaction;
 
 ## Create table with constraints
+Constraints are used to limit the type of data that can go into a table to ensures the accuracy and reliability of data. 
+
+The following constraints are the commonly used ones,
+
+| Constraints | Description |
+| --- | ----------- |
+| PRIMARY KEY | A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table |
+| FOREIGN KEY | Prevents actions that would destroy links between tables|
+| NOT NULL | Ensures that a column cannot have a NULL value|
+| UNIQUE | Ensures that all values in a column are different |
+| CHECK | Ensures that the values in a column satisfy a specific condition |
+| DEFAULT | Sets a default value for a column if no value is specified |
+| CREATE INDEX | Used to create and retrieve data from the database very quickly |
+
+---
+
 Let's now drop the table we just created and create new tables with constraints.
 Syntax:
 
@@ -82,19 +98,7 @@ Example:
         address VARCHAR(25),
         balance FLOAT(5) DEFAULT 500,
         account_status VARCHAR(10)
-    );
-    
-    CREATE TABLE transaction(
-        transaction_id INT PRIMARY KEY AUTO_INCREMENT,
-        account_number VARCHAR(10),
-        transaction_type VARCHAR(10),
-        amount FLOAT(5),
-        transaction_date DATETIME,
-        status VARCHAR(10),
-        FOREIGN KEY (account_number) REFERENCES account(account_number)
-    );
-
-    
+    );   
 
 Let's view the tables again and see the constraints we just added.
 
