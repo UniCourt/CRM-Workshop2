@@ -19,7 +19,7 @@ Syntax:
 Example,
 
     ALTER TABLE account
-    ADD phone_number INT(15);
+    ADD phone_number VARCHAR(10);
 
 ## Insert records
 
